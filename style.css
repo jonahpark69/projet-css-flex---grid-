@@ -1,0 +1,856 @@
+/* ------------------------------------ */
+/* 🌐 Feuille de style de l'atelier CSS : Choisir entre Grid ou Flexbox */
+/* ------------------------------------ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+.site-header{
+  max-width:1280px;
+  margin:20px auto;
+  padding:0 16px;
+}
+
+h2{
+  margin:40px 0 12px 10px;
+  font-size:20px;
+  font-weight:700;
+  line-height:1.2;
+  color:#1f2937;
+}
+
+main{
+  max-width:1280px;
+  margin:0 auto;
+  padding-left:16px;
+  padding-right:16px;
+}
+
+body{
+  font-family:"Inter",sans-serif;
+  background:#f8fafc;
+  color:#64748b;
+}
+
+section{
+  margin-bottom:48px;
+}
+
+/* ===========================
+   Encarts "Justification"
+   =========================== */
+.section-featured__note,
+.section-techs__note,
+.section-projects__note,
+.justification{
+  margin:12px 0 24px 0;
+  padding:14px 14px;
+  background:#dbeafe;
+  border-radius:8px;
+  color:#0f172a;
+  line-height:1.55;
+  margin-top:40px;
+}
+
+.section-featured__note-label,
+.section-techs__note-label,
+.section-projects__note-label{
+  font-weight:600;
+  color:#1d4ed8;
+  margin-right:4px;
+}
+
+.section-featured .justification,
+.section-featured .section-featured__note{
+  margin-top:25px;
+}
+
+.section-techs .justification,
+.section-techs .section-techs__note{
+  margin-top:15px;
+}
+
+/* ===========================
+   HEADER / NAV
+   =========================== */
+.site-header{
+  position: relative;
+  padding-top: 70px;
+}
+
+#nav-title{
+  position: absolute;
+  top: -30px;
+  left: 15px;
+  z-index: 2;
+}
+
+.site-header .main-nav{
+  margin-top: 0;
+}
+
+.main-nav{
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 16px;
+  box-shadow: 0 0 0 2px #cbd5e1, 0 2px 6px rgba(0,0,0,0.04);
+  column-gap: 16px;
+  padding-right: 35px;
+}
+
+.main-nav ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-left{
+  gap: 24px;
+  flex: 1 1 auto;
+}
+
+.nav-right{
+  gap: 12px;
+  margin-left: auto;
+}
+
+.nav-left a,
+.nav-right a{
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+  padding: 10px 12px;
+}
+
+.main-nav a:not(.brand-badge):not(.btn):hover{
+  background: #f3f4f6;
+}
+
+.main-nav a:focus{
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* ===== Boutons unifiés (TechPro + S’inscrire) ===== */
+.brand-badge,
+.btn.btn-primary{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:10px;
+  background:#1d4ed8;
+  color:#fff;
+  font-weight:700;
+  line-height:1;
+  text-decoration:none;
+}
+.brand-badge:hover,
+.btn.btn-primary:hover{
+  background:#1b44bf;
+  color:#fff;
+}
+
+a[aria-current="page"]{
+  font-weight: 600;
+}
+
+.main-nav a[aria-current="page"]{
+  color: #1d4ed8;
+}
+
+.main-nav a[aria-current="page"]:not(.brand-badge){
+  color:#1d4ed8;
+}
+
+.main-nav .brand-badge,
+.main-nav .brand-badge[aria-current="page"]{
+  color:#fff;
+}
+
+/* ===========================
+        Section cours
+   =========================== */
+.courses{
+  margin:0;
+  padding:0;
+  border-radius:12px;
+  background:#fff;
+  padding-top:60px;
+}
+
+.course-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin:40px 0 0;
+  gap:32px;
+}
+
+.course-card{
+  display:flex;
+  flex-direction:column;
+  border-radius:12px;
+  padding:24px;
+  background:#fff;
+  box-shadow:0 0 0 2px #cbd5e1, 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.course-card__media{
+  margin:0 0 16px 0;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.course-card__media a{
+  display:block;
+  text-decoration:none;
+}
+
+.course-card__cover{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  aspect-ratio:16/9;
+  border-radius:16px;
+  overflow:hidden;
+  background:#e5e7eb;
+}
+
+.course-card__cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.course-card__cover span{
+  color:#fff;
+  font-weight:800;
+  font-size:56px;
+  line-height:1;
+  letter-spacing:.5px;
+}
+
+.course-card__top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.badge{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #e6f0ff;
+  color: #1d4ed8;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.course-card .badge,
+.card-featured .badge{
+  background:#dbeafe;
+  border:1px solid #bfdbfe;
+  color:#1d4ed8;
+}
+
+.meta{
+  font-size:14px;
+  color:#94a3b8;
+}
+
+.course-card__title{
+  margin:0 0 12px;
+  font-size:22px;
+  line-height:1.25;
+  color:#111827;
+}
+
+.course-card__title a{
+  color:#111827;
+  text-decoration:none;
+}
+
+.course-card__desc{
+  margin:0 0 20px;
+  color:#6b7280;
+  font-size:16px;
+  line-height:1.55;
+}
+
+.course-card__bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:auto;
+}
+
+.price{
+  font-weight:600;
+  font-size:18px;
+  color:#111827;
+}
+
+/* ===========================
+   Section "Article à la une" 
+   =========================== */
+.section-featured{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px 20px;
+  margin-top: 24px;
+}
+
+.card-featured{
+  position: relative;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  box-shadow: 0 0 0 2px #cbd5e1, 0 2px 6px rgba(0,0,0,0.04);
+  min-height: 320px;
+}
+
+.section-featured > h2,
+.section-featured .section-featured__title{
+  margin: 80px 0 10px 10px;
+}
+
+.card-featured__media{
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.card-featured__media a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.card-featured__media .course-card__cover{
+  width: 100%;
+  height: 100%;
+  background: #1d4ed8;
+}
+
+.card-featured__media .course-card__cover span{
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: .2px;
+  text-align: center;
+  line-height: 1.25;
+  padding: 0 12px;
+}
+
+.card-featured__body{
+  display: grid;
+  row-gap: 8px;
+}
+
+.card-featured__meta{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.card-featured__readtime{
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.card-featured__heading{
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #1f2937;
+}
+
+.card-featured__link{
+  text-decoration: none;
+}
+
+.card-featured__link:focus-visible{
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.card-featured__avatar{
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.card-featured__author-name{
+  display: block;
+  font-weight: 600;
+  color: #111827;
+}
+
+.card-featured__author-role{
+  display: block;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===========================
+   Section "Technologies maîtrisées" 
+   =========================== */
+.section-techs{
+  width:100%;
+  margin:0;
+  padding:0;
+  background:#ffffff;
+  border-radius:12px;
+  margin-top:32px;
+}
+
+.section-techs > h2,
+.section-techs .section-techs__title{
+  margin:80px 0 12px 10px;
+}
+
+.techs-card{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#ffffff;
+  border-radius:12px;
+  padding:0;
+  min-height:70px;
+}
+
+.techs-card__list{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:8px 10px;
+  list-style:none;
+  margin:0 auto;
+  padding:0;
+  width:max-content;
+  justify-content:center;
+  align-items:center;
+}
+
+.techs-card__item{
+  display:block;
+  flex:0 0 auto;
+  margin:0;
+  padding:0;
+}
+
+.techs-card__pill{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 600;
+  color: #475569;
+  background: #d4d9e0;
+  border-radius: 9999px;
+  white-space: nowrap;
+  width: auto;
+  text-align: center;
+}
+
+/* ===========================
+   Section "Nos projets réalisés" 
+   =========================== */
+.section-projects{
+  width:100%;
+  margin:0;
+  padding:0;
+  background:#ffffff;
+  border-radius:12px;
+  margin-top:28px;
+}
+
+.section-projects > h2,
+.section-projects .section-projects__title{
+  margin:100px 0 28px 10px;
+}
+
+.projects-board{
+  background:#ffffff;
+  border-radius:12px;
+  padding:0;
+}
+
+.projects-board__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.projects-board__item{
+  display:block;
+  margin:0;
+  padding:0;
+}
+
+.projects-board__link{
+  display:block;
+  text-decoration:none;
+}
+
+.projects-board__tile{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:12px;
+  box-shadow:inset 0 1px 0 rgba(0,0,0,0.04);
+  overflow:hidden;
+  background:#e5e7eb;
+  text-align:center;
+}
+
+.projects-board__tile img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.projects-board__tile > span{
+  color:#ffffff;
+  font-weight:700;
+  line-height:1.25;
+  font-size:24px;
+  letter-spacing:.2px;
+}
+
+.projects-board__item--wide{
+  grid-column:span 2;
+}
+
+.projects-board__tile--wide{
+  aspect-ratio:8/3;
+}
+
+.projects-board__tile--wide > span{
+  font-size:36px;
+  line-height:1.15;
+  font-weight:800;
+}
+
+
+/* ===========================
+   Responsive mobile — Header/Nav
+   =========================== */
+@media (max-width:700px){
+  .main-nav{
+    position: relative;
+    padding: 22px 16px;
+    justify-content: initial;
+  }
+
+  .nav-left a:not(.brand-badge),
+  .nav-right > *{ display:none; }
+
+  .brand-badge{
+    position: absolute;
+    left: 50%;
+    top: 3px;
+    margin-left: -60px;
+  }
+
+  .nav-right{
+    position: absolute;
+    right: 12px;
+    top: 0px;
+    margin: 0; gap: 0;
+  }
+  .nav-right > li:last-child{
+    display:block;
+  }
+
+  .nav-right > li:last-child > a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    padding:0;
+    border-radius:8px;
+    text-indent:-9999px;
+    overflow:hidden;
+    background-color:#fff;
+    background:
+      linear-gradient(#0f172a,#0f172a) no-repeat,
+      linear-gradient(#0f172a,#0f172a) no-repeat,
+      linear-gradient(#0f172a,#0f172a) no-repeat;
+    background-size:20px 2px,20px 2px,20px 2px;
+    background-position:center 11px, center 20px, center 29px;
+  }
+
+  .nav-right > li:last-child > a:hover,
+  .nav-right > li:last-child > a:focus,
+  .nav-right > li:last-child > a:active{
+    background-color:#fff;
+    box-shadow:none;
+    text-decoration:none;
+    filter:none;
+  }
+}
+
+/* ===========================
+   Responsive mobile — Section cours
+   =========================== */
+@media (max-width:700px){
+  .section-courses > h2,
+  .section-courses .section-courses__title{
+    margin:20px 0 12px 10px;
+    font-size:18px;
+  }
+
+  .course-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+    padding:12px;
+  }
+
+  .course-card{
+    padding:16px;
+    gap:10px;
+  }
+
+  .course-card__media{
+    display:none;
+  }
+
+  .course-card__meta{
+    gap:10px;
+  }
+
+  .badge{
+    font-size:12px;
+    padding:6px 10px;
+  }
+
+  .course-card__duration{
+    font-size:12px;
+  }
+
+  .course-card__title{
+    font-size:16px;
+  }
+
+  .course-card__desc{
+    font-size:14px;
+    line-height:20px;
+  }
+
+  .course-card__price{
+    font-size:16px;
+  }
+
+  .course-card__cta{
+    display:block;
+    width:100%;
+    padding:12px 14px;
+    font-size:14px;
+  }
+
+  .justification,
+  .section-courses__justification,
+  .course-justification{
+    margin:12px;
+    padding:10px 12px;
+    font-size:14px;
+  }
+}
+
+/* ===========================
+   Responsive mobile — Courses (images affichées)
+   =========================== */
+@media (max-width:700px){
+  .course-card__media{
+    display:block;
+    height:300px;
+    border-radius:10px;
+    overflow:hidden;
+    background:#f8fafc;
+    margin-bottom:10px;
+  }
+
+  .course-card__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+}
+
+/* ===========================
+   Responsive mobile — Article à la une
+   =========================== */
+@media (max-width:700px){
+  .card-featured{
+    display:block;
+  }
+
+  .card-featured__media{
+    display:block;
+    height:200px;
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+
+  .card-featured__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .card-featured__meta{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:6px;
+  }
+
+  .card-featured__author{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  
+  .featured-justification,
+  .section-featured__justification,
+  .justification{
+    margin-top:12px;
+  }
+}
+
+/* ===========================
+   Responsive mobile — Technologies maîtrisées
+   =========================== */
+@media (max-width:700px){
+  .section-techs > h2,
+  .section-techs .section-techs__title{
+    margin:20px 0 10px 10px;
+    font-size:18px;
+  }
+
+  .techs-card{
+    padding:12px;
+    min-height:auto;
+    justify-content:flex-start;
+    align-items:flex-start;
+    overflow-x:visible;
+  }
+
+  .techs-card__list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0;
+    padding:0;
+    width:auto;
+    justify-content:flex-start;
+    align-items:center;
+  }
+
+  .techs-card__item{
+    flex:0 0 auto;
+  }
+
+  .techs-card__pill{
+    padding:8px 12px;
+    font-size:14px;
+    line-height:1;
+    border-radius:9999px;
+    background:#f1f5f9;
+    color:#374151;
+    white-space:nowrap;
+  }
+
+  .section-techs .justification,
+  .section-techs .section-techs__justification{
+    margin:12px 10px 0 10px;
+    padding:10px 12px;
+    font-size:14px;
+  }
+}
+
+/* ===========================
+   Responsive mobile — Nos projets réalisés
+   =========================== */
+@media (max-width:700px){
+  .section-projects,
+  .projects-board,
+  .projects-board__grid{
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+
+  .projects-board__grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    grid-auto-flow:row !important;
+    gap:12px !important;
+  }
+
+  .projects-board__item,
+  .projects-board__link{
+    position:static !important;
+    display:block !important;
+    width:100% !important;
+    margin:0; padding:0;
+  }
+
+  .projects-board__item figure{
+    margin:0;
+  }
+
+  .projects-board__item img,
+  .projects-board__link img{
+    display:block !important;
+    width:100% !important;
+    height:150px !important;
+    object-fit:cover !important;
+    border-radius:8px;
+  }
+}
+
+
+
+
+
+

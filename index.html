@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atelier Grid vs Flexbox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+   
+    <header class="site-header" aria-labelledby="nav-title">
+      <h2 id="nav-title">Navigation principale</h2>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <!-- UL gauche : liens principaux -->
+        <ul class="nav-left">
+          <li><a class="brand-badge" href="/">TechPro</a></li>
+          <li><a href="/" aria-current="page">Accueil</a></li>
+          <li><a href="/produits">Produits</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+
+        <!-- UL droite : actions (boutons) -->
+        <ul class="nav-right">
+          <li><a class="btn btn-ghost" href="/login">Se connecter</a></li>
+          <li><a class="btn btn-primary" href="/signup">S’inscrire</a></li>
+        </ul>
+      </nav>
+
+      <p class="justification">
+        <span class="section-projects__note-label">Justification :</span>
+        J’ai choisi Flexbox car la navigation est sur une seule ligne (deux groupes de liens).
+        Flex permet de répartir l’espace, aligner verticalement et gérer les écarts facilement.
+        Pas besoin de Grid ici : il est surtout utile pour des mises en page en plusieurs lignes/colonnes.
+      </p>
+    </header>
+
+    <main>
+      <section class="courses" aria-labelledby="courses-title">
+  <h2 id="courses-title">Nos formations populaires</h2>
+
+  <!-- Conteneur grille -->
+  <div class="course-list">
+
+    <!-- Carte 1 -->
+    <article class="course-card">
+      <figure class="course-card__media" aria-hidden="true">
+  <a href="/cours/javascript-moderne">
+    <div class="course-card__cover">
+      <img src="assets/media/img/img-1.jpeg"
+           alt="Aperçu du cours JavaScript Moderne"
+           loading="lazy" width="640" height="360">
+    </div>
+  </a>
+</figure>
+
+      <div class="course-card__top">
+        <span class="badge">Développement</span>
+        <span class="meta">12h de cours</span>
+      </div>
+
+      <h3 class="course-card__title">
+        <a href="/cours/javascript-moderne">JavaScript Moderne</a>
+      </h3>
+
+      <p class="course-card__desc">
+        Maîtrisez ES6+, async/await et les frameworks modernes
+      </p>
+
+      <div class="course-card__bottom">
+        <span class="price" aria-label="Prix">299&nbsp;€</span>
+        <a class="btn btn-primary" href="/inscription/javascript-moderne">S’inscrire</a>
+      </div>
+    </article>
+
+    <!-- Carte 2 -->
+    <article class="course-card">
+      <figure class="course-card__media" aria-hidden="true">
+  <a href="/cours/react-avance">
+    <div class="course-card__cover">
+      <img src="assets/media/img/img-2.jpeg"
+           alt="Aperçu du cours React Avancé"
+           loading="lazy" width="640" height="360">
+    </div>
+  </a>
+</figure>
+
+
+      <div class="course-card__top">
+        <span class="badge">Framework</span>
+        <span class="meta">15h de cours</span>
+      </div>
+
+      <h3 class="course-card__title">
+        <a href="/cours/react-avance">React Avancé</a>
+      </h3>
+
+      <p class="course-card__desc">
+        Créez des applications web performantes avec React
+      </p>
+
+      <div class="course-card__bottom">
+        <span class="price">399&nbsp;€</span>
+        <a class="btn btn-primary" href="/inscription/react-avance">S’inscrire</a>
+      </div>
+    </article>
+
+    <!-- Carte 3 -->
+    <article class="course-card">
+      <figure class="course-card__media" aria-hidden="true">
+  <a href="/cours/node-express">
+    <div class="course-card__cover">
+      <img src="assets/media/img/img-3.jpeg"
+           alt="Aperçu du cours Node.js & Express"
+           loading="lazy" width="640" height="360">
+    </div>
+  </a>
+</figure>
+
+
+      <div class="course-card__top">
+        <span class="badge">Backend</span>
+        <span class="meta">18h de cours</span>
+      </div>
+
+      <h3 class="course-card__title">
+        <a href="/cours/node-express">Node.js &amp; Express</a>
+      </h3>
+
+      <p class="course-card__desc">
+        Développez des API REST et applications serveur
+      </p>
+
+      <div class="course-card__bottom">
+        <span class="price">449&nbsp;€</span>
+        <a class="btn btn-primary" href="/inscription/node-express">S’inscrire</a>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="justification">
+    <span class="section-projects__note-label">Justification :</span>
+    La navigation en haut est alignée avec Flexbox pour une mise en page linéaire
+    propre, tandis que les cartes de cours sont organisées en grille responsive
+    avec CSS Grid pour s’adapter naturellement aux différentes tailles d’écran.
+    L’objectif est d’offrir une structure claire et lisible.
+  </p>
+</section>
+
+
+      <section class="section-featured" aria-labelledby="featured-title">
+        <h2 id="featured-title" class="section-featured__title">Article à la une</h2>
+
+        <!-- Carte "à la une" -->
+        <article class="card-featured">
+
+          <!-- Média à gauche (panneau bleu avec texte) -->
+          <figure class="card-featured__media" aria-hidden="true">
+  <a href="/blog/impact-ia-developpement-web-2024">
+    <div class="course-card__cover">
+      <img src="assets/media/img/img_4.jpeg"
+           alt="Impact de l’IA sur le développement web en 2024"
+           loading="lazy" width="640" height="360">
+    </div>
+  </a>
+</figure>
+
+
+          <!-- Contenu à droite -->
+          <div class="card-featured__body">
+            <div class="card-featured__meta">
+              <!-- Hérite du style de .badge pour la cohérence visuelle -->
+              <span class="badge card-featured__badge">Technologies</span>
+              <span class="card-featured__readtime">10&nbsp;min de lecture</span>
+            </div>
+
+            <h3 class="card-featured__heading">
+              <a class="card-featured__link" href="/blog/impact-ia-developpement-web-2024">
+                L'Impact de l'IA sur le Développement Web en 2024
+              </a>
+            </h3>
+
+            <p class="card-featured__excerpt">
+              L'intelligence artificielle révolutionne la façon dont nous concevons et développons des
+              applications web. Découvrez les dernières innovations et leur impact sur l'industrie du
+              développement…
+            </p>
+
+            <!-- Auteur -->
+            <div class="card-featured__author">
+              <div class="card-featured__avatar" aria-hidden="true">ML</div>
+              <div>
+                <span class="card-featured__author-name">Marie Laurent</span>
+                <span class="card-featured__author-role">Lead Developer @ TechPro</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Justification sous la carte -->
+        <p class="section-featured__note">
+          <span class="section-featured__note-label">Justification :</span>
+          Ceci est ma justification
+        </p>
+      </section>
+
+      <section class="section-techs" aria-labelledby="section-techs__title">
+        <h2 id="section-techs__title" class="section-techs__title">Technologies maîtrisées</h2>
+
+        <div class="techs-card">
+          <ul class="techs-card__list" aria-label="Liste des technologies">
+            <li class="techs-card__item"><span class="techs-card__pill">React.js</span></li>
+            <li class="techs-card__item"><span class="techs-card__pill">Vue.js</span></li>
+            <li class="techs-card__item"><span class="techs-card__pill">Node.js</span></li>
+            <li class="techs-card__item"><span class="techs-card__pill">TypeScript</span></li>
+            <li class="techs-card__item"><span class="techs-card__pill">Python</span></li>
+            <li class="techs-card__item"><span class="techs-card__pill">Docker</span></li>
+            <li class="techs-card__item"><span class="techs-card__pill">AWS</span></li>
+          </ul>
+        </div>
+
+        <p class="section-techs__note">
+          <span class="section-techs__note-label">Justification :</span>
+          J’ai utilisé Flexbox pour la liste de technologies car c’est un besoin sur un seul axe :
+          des tags qui s’alignent et s’enroulent proprement, avec des écarts réguliers.
+          Pas de Grid ici car il n’y a pas de colonnes fixes ni de mise en page 2D.
+          Si un jour je veux des colonnes stables (ex. 3 colonnes), j’opterai alors pour CSS Grid.
+        </p>
+      </section>
+
+      <section class="section-projects" aria-labelledby="section-projects__title">
+  <h2 id="section-projects__title" class="section-projects__title">Nos projets réalisés</h2>
+
+  <div class="projects-board" role="region" aria-label="Galerie des projets">
+    <ul class="projects-board__grid">
+      <!-- Tuile 1 -->
+      <li class="projects-board__item">
+        <a class="projects-board__link" href="#" aria-label="Voir le projet Inspiration Visuelle">
+          <div class="projects-board__tile">
+            <img src="assets/media/img/img-5.jpeg"
+                 alt="Inspiration Visuelle" width="800" height="600" loading="lazy">
+          </div>
+        </a>
+      </li>
+
+      <!-- Tuile 2 -->
+      <li class="projects-board__item">
+        <a class="projects-board__link" href="#" aria-label="Voir le projet Grille Créative">
+          <div class="projects-board__tile">
+            <img src="assets/media/img/img-6.jpeg"
+                 alt="Grille Créative" width="800" height="600" loading="lazy">
+          </div>
+        </a>
+      </li>
+
+      <!-- Tuile 3 -->
+      <li class="projects-board__item">
+        <a class="projects-board__link" href="#" aria-label="Voir le projet Moodboard Produits">
+          <div class="projects-board__tile">
+            <img src="assets/media/img/img-7.jpeg"
+                 alt="Moodboard Produits" width="800" height="600" loading="lazy">
+          </div>
+        </a>
+      </li>
+
+      <!-- Tuile 4 (petite, rangée du bas, colonne 1) -->
+      <li class="projects-board__item">
+        <a class="projects-board__link" href="#" aria-label="Voir le projet Univers en images">
+          <div class="projects-board__tile">
+            <img src="assets/media/img/img-8.jpeg"
+                 alt="Univers en images" width="800" height="600" loading="lazy">
+          </div>
+        </a>
+      </li>
+
+      <!-- Tuile 5 (grande, span 2 colonnes à droite, même hauteur) -->
+      <li class="projects-board__item projects-board__item--wide">
+        <a class="projects-board__link" href="#" aria-label="Voir la collection en un coup d’œil">
+          <div class="projects-board__tile projects-board__tile--wide">
+            <img src="assets/media/img/img-9.jpeg"
+                 alt="Collection en un coup d’œil" width="1600" height="600" loading="lazy">
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <p class="section-projects__note">
+    <span class="section-projects__note-label">Justification :</span>
+    J’utilise CSS Grid pour obtenir 3 colonnes régulières, puis une tuile sur 2 colonnes pour le
+    bloc principal. Les tuiles sont centrées en flex pour garder le texte lisible et aligné.
+  </p>
+</section>
+
+
+
+    </main>
+
+  </body>
+</html>
+
